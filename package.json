@@ -1,0 +1,26 @@
+{
+  "name": "yakisova-ai-desktopapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev:css": "npx tailwindcss -i ./src/index.css -o ./src/output.css --watch",
+    "dev": "concurrently \"npm:dev:css\" \"npm:start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "electron": "^36.3.2",
+    "electron-reload": "^2.0.0-alpha.1"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.21",
+    "daisyui": "^5.0.43",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^4.1.8",
+    "yakisova-ai-desktopapp": "file:"
+  }
+}
