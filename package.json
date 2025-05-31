@@ -19,6 +19,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.21",
     "daisyui": "^5.0.43",
+    "openai": "^5.0.1",
     "postcss": "^8.5.4",
     "tailwindcss": "^4.1.8",
     "yakisova-ai-desktopapp": "file:"

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
     background: #F8FBFF;
 }
 
@@ -34,46 +34,193 @@ body{
 }
 
 #header-title h1 {
-color: #4e4e4e;
-font-family: "Inter";
-font-size: 15px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
+    color: #4e4e4e;
+    font-family: "Inter";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
-#sidebar-container{
-width: 330px;
-height: 790px;
-flex-shrink: 0;
-border: 1px solid #D4D4D4;
-background: #FFF;
+#sidebar-container {
+    width: 330px;
+    height: 790px;
+    flex-shrink: 0;
+    border: 1px solid #D4D4D4;
+    background: #FFF;
+    padding: 20px;
 }
 
-#container1{
+#container1 {
     display: flex;
     flex-direction: row;
 }
 
-#main-container{
+#main-container {
     width: 1253px;
-height: 700px;
-flex-shrink: 0;
-border-radius: 20px 0px 0px 0px;
-border: 1px solid #D4D4D4;
-background: #FFF;
-position: fixed;
-top:160px;
+    height: 700px;
+    flex-shrink: 0;
+    border-radius: 20px 0px 0px 0px;
+    border: 1px solid #D4D4D4;
+    background: #FFF;
+    position: fixed;
+    top: 160px;
 }
 
-.title-main{
-color: #383838;
-font-family: "Inter";
-font-size: 30px;
-font-style: normal;
-font-weight: 600;
-line-height: 25px; /* 83.333% */
-position: relative;
-top: 30px;
-left: 20px;
+.title-main {
+    color: #383838;
+    font-family: "Inter";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 25px;
+    /* 83.333% */
+    position: relative;
+    top: 30px;
+    left: 20px;
+}
+
+
+#sidebar-container {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+
+#welcome-texts h1 {
+    color: #383838;
+    font-family: "Inter";
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+    /* 50% */
+}
+
+#welcome-texts p {
+    color: #7E7E7E;
+    text-align: center;
+    font-family: Inter;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    /* 147.059% */
+    width: 652px;
+    height: 29px;
+    flex-shrink: 0;
+}
+
+#welcome-texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    top: 50px;
+}
+
+#message-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 350px;
+}
+
+
+
+
+.input {
+    --icon-size: 28px;
+    position: fixed;
+    top:760px;
+}
+
+.input svg {
+    position: absolute;
+    width: var(--icon-size);
+    top: 50%;
+    left: 1rem;
+    translate: 0 -50%;
+    overflow: visible;
+    color: color-mix(in lch, canvas, canvasText 30%);
+}
+
+.input svg path {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.input:is(:hover, :focus-within) .svg path {
+    animation: pop 0.5s var(--d);
+}
+
+.input svg path:nth-of-type(1) {
+    --d: 0.24s;
+    --r: 20deg;
+    --s: 1.5;
+}
+
+.input svg path:nth-of-type(2) {
+    --d: 0.12s;
+    --r: 10deg;
+    --s: 1.4;
+}
+
+.input svg path:nth-of-type(3) {
+    --d: 0s;
+    --r: 0deg;
+    --s: 1.25;
+}
+
+@keyframes pop {
+    50% {
+        scale: var(--s, 1);
+        rotate: var(--r, 0deg);
+    }
+}
+
+.search::placeholder {
+    color: color-mix(in lch, canvas, canvasText 30%);
+}
+
+.search {
+    box-shadow:
+        0 20px 25px -5px rgb(0 0 0 / 0.15),
+        0 8px 10px -6px rgb(0 0 0 / 0.25);
+    font-family: inherit;
+    min-width: 1100px;
+    padding: 1rem 1rem 1rem calc(1rem + var(--icon-size) + 0.5rem);
+    font-size: 1.025rem;
+    field-sizing: content;
+    background:
+        linear-gradient(canvas, canvas) padding-box,
+        linear-gradient(120deg, hsl(278, 44%, 73%), hsl(35, 81%, 73%)) border-box;
+    border: 4px solid transparent;
+    border-radius: 12px;
+    outline: none;
+    /*   background-clip: padding-box, border-box; */
+}
+
+.bear-link {
+    color: canvasText;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 48px;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    opacity: 0.8;
+}
+
+:where(.x-link, .bear-link):is(:hover, :focus-visible) {
+    opacity: 1;
+}
+
+.bear-link .svg {
+    width: 75%;
 }
