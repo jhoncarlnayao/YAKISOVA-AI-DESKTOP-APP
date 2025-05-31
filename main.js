@@ -12,7 +12,7 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const OpenAI = require('openai');
 const openai = new OpenAI({
-  apiKey: "",
+
 });
 
 
